@@ -259,26 +259,16 @@ const Dashboard = () => {
 												Workspace Count
 											</p>
 										</div>
+										<span className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold bg-indigo-500/15 text-indigo-400 border border-indigo-500/20">
+											<TrendingUp className="w-3 h-3" />
+											+8.5%
+										</span>
 									</div>
 									<div className="flex items-baseline gap-2">
 										<p className="text-3xl font-mono font-semibold text-white tracking-tight">
 											{animatedNumbers.workspaceCount}
 										</p>
 										<span className="text-xs text-slate-500">workspaces</span>
-									</div>
-									<div className="mt-3 flex items-center gap-2 text-xs text-slate-500">
-										<span className="inline-flex items-center gap-1">
-											<span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-											<span className="text-emerald-400">35 active</span>
-										</span>
-										<span className="inline-flex items-center gap-1">
-											<span className="w-1.5 h-1.5 rounded-full bg-amber-400"></span>
-											<span className="text-amber-400">8 pending</span>
-										</span>
-										<span className="inline-flex items-center gap-1">
-											<span className="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
-											<span>4 archived</span>
-										</span>
 									</div>
 								</div>
 							</div>
@@ -305,15 +295,6 @@ const Dashboard = () => {
 											${animatedNumbers.costSavings.toLocaleString()}
 										</p>
 									</div>
-									<div className="mt-3 space-y-2">
-										<div className="flex items-center justify-between text-xs">
-											<span className="text-slate-500">Target: $250,000</span>
-											<span className="text-emerald-400 font-mono">75%</span>
-										</div>
-										<div className="h-1.5 bg-slate-700/50 rounded-full overflow-hidden">
-											<div className="h-full w-3/4 bg-gradient-to-r from-emerald-500 to-emerald-400 rounded-full transition-all duration-1000" />
-										</div>
-									</div>
 								</div>
 							</div>
 
@@ -329,23 +310,15 @@ const Dashboard = () => {
 												Cost Per Line of Code
 											</p>
 										</div>
+										<span className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-xs font-semibold bg-orange-500/10 border border-orange-500/20 group-hover:bg-orange-500/20  text-orange-400 border border-emerald-500/20">
+											<TrendingDown className="w-3 h-3" />
+											-27.5%
+										</span>
 									</div>
 									<div className="flex items-baseline gap-2">
 										<p className="text-3xl font-mono font-semibold text-white tracking-tight">
 											${animatedNumbers.costPerLine.toFixed(4)}
 										</p>
-									</div>
-									<div className="mt-3 flex items-center justify-between text-xs">
-										<div className="flex items-center gap-2">
-											<span className="text-slate-500">vs benchmark</span>
-											<span className="text-orange-400 font-mono">$0.012</span>
-										</div>
-										<div className="flex items-center gap-1 px-2 py-0.5 rounded-md bg-emerald-500/10 border border-emerald-500/20">
-											<TrendingDown className="w-3 h-3 text-emerald-400" />
-											<span className="text-emerald-400 font-semibold">
-												-27.5%
-											</span>
-										</div>
 									</div>
 								</div>
 							</div>
