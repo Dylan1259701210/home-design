@@ -5,6 +5,7 @@ export interface FileTreeNode {
 	count?: number;
 	workflow?: "Manual" | "Automatic";
 	children?: FileTreeNode[];
+	link?: string;
 }
 
 export interface MigrationStage {
@@ -37,6 +38,7 @@ export const fileTreeData: FileTreeNode[] = [
 			{
 				id: "folder-etl-pipeline",
 				name: "etl_pipeline",
+				link: "www.2345.com",
 				type: "folder",
 				count: 45,
 				workflow: "Manual",
@@ -481,10 +483,7 @@ export const migrationStages: MigrationStage[] = [
 	{
 		title: "SAS and DMS",
 		count: 0,
-		steps: [
-			{ label: "SAS Programmer" },
-			{ label: "SAS Server Dess" },
-		],
+		steps: [{ label: "SAS Programmer" }, { label: "SAS Server Dess" }],
 		type: "Manual",
 	},
 ];

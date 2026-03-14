@@ -8,6 +8,7 @@ import {
 	ChevronUp,
 	ChevronDown,
 	ChevronRight,
+	ExternalLink,
 } from "lucide-react";
 import FileTreeNode from "./FileTreeNode";
 import styles from "./FileTreeSection.module.scss";
@@ -17,6 +18,7 @@ interface FileTreeNodeType {
 	name: string;
 	type: "folder" | "file";
 	count?: number;
+	link?: string;
 	children?: FileTreeNodeType[];
 }
 
@@ -71,6 +73,11 @@ export const FileTreeSection: React.FC<FileTreeSectionProps> = ({
 
 		return filterNodes(fileTreeData);
 	}, [searchTerm, fileTreeData]);
+
+	const handleLinkClick = (e: React.MouseEvent, link: string) => {
+		e.stopPropagation();
+		window.open(`http://${link}`, "_blank");
+	};
 
 	return (
 		<section className={styles.fileTreeSection}>
@@ -176,9 +183,33 @@ export const FileTreeSection: React.FC<FileTreeSectionProps> = ({
 															className={`${styles.fileTreeNodeChildrenItemIcon} ${styles.file}`}
 														/>
 													)}
-													<span className={styles.fileTreeNodeChildrenItemName}>
-														{child.name}
-													</span>
+													<div
+														style={{
+															display: "flex",
+															alignItems: "center",
+															gap: "4px",
+														}}
+													>
+														<span
+															className={`${styles.fileTreeNodeChildrenItemName} ${child.link ? styles.linkText : ""}`}
+															onClick={(e) =>
+																child.link && handleLinkClick(e, child.link)
+															}
+															style={{
+																cursor: child.link ? "pointer" : "default",
+															}}
+														>
+															{child.name}
+														</span>
+														{child.link && (
+															<ExternalLink
+																size={12}
+																className={styles.externalLink}
+																onClick={(e) => handleLinkClick(e, child.link!)}
+																style={{ cursor: "pointer" }}
+															/>
+														)}
+													</div>
 													{child.count !== undefined && (
 														<span
 															className={styles.fileTreeNodeChildrenItemCount}
