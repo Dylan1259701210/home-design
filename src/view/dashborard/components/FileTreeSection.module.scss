@@ -1,0 +1,313 @@
+/* File Tree Section Styles */
+.fileTreeSection {
+	border-radius: 1rem;
+	background-color: rgba(255, 255, 255, 0.85);
+	backdrop-filter: blur(24px);
+	border: 1px solid rgba(255, 255, 255, 0.3);
+	overflow: hidden;
+	box-shadow: 0 4px 16px rgba(99, 102, 241, 0.1);
+}
+
+.fileTreeSectionHeader {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1rem;
+	transition: background-color 0.2s ease;
+	background: none;
+	border: none;
+	cursor: pointer;
+
+	&:hover {
+		background-color: #F1F5F9;
+	}
+}
+
+.fileTreeSectionHeaderLeft {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.fileTreeSectionHeaderIcon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.5rem;
+	border-radius: 0.5rem;
+	background: linear-gradient(
+		to bottom right,
+		#F59E0B,
+		#EA580C
+	);
+}
+
+.fileTreeSectionHeaderIconSvg {
+	width: 1rem;
+	height: 1rem;
+	color: white;
+}
+
+.fileTreeSectionHeaderText {
+	text-align: left;
+}
+
+.fileTreeSectionHeaderTitle {
+	font-size: 1rem;
+	font-weight: 600;
+	color: #1E1B4B;
+	margin: 0;
+	font-family: 'Poppins', 'Open Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+.fileTreeSectionHeaderSubtitle {
+	font-size: 0.75rem;
+	color: #4338CA;
+	margin: 0.25rem 0 0 0;
+	font-family: 'Poppins', 'Open Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+.fileTreeSectionHeaderRight {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.fileTreeSectionHeaderStatus {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-size: 0.75rem;
+	color: #4338CA;
+	font-family: 'Poppins', 'Open Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+.securityIcon {
+	width: 0.875rem;
+	height: 0.875rem;
+	color: #10B981;
+}
+
+.lockIcon {
+	width: 0.875rem;
+	height: 0.875rem;
+	color: #6366F1;
+	margin-left: 0.5rem;
+}
+
+.fileTreeSectionHeaderToggle {
+	width: 1rem;
+	height: 1rem;
+	color: #94A3B8;
+}
+
+.fileTreeSectionContent {
+	border-top: 1px solid #EDE9FE;
+}
+
+.fileTreeSectionContentInner {
+	padding: 1rem;
+}
+
+.fileTreeSectionContentSearch {
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+.searchIcon {
+	position: absolute;
+	left: 0.75rem;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 1rem;
+	height: 1rem;
+	color: #94A3B8;
+}
+
+.searchInput {
+	width: 100%;
+	border-radius: 0.5rem;
+	background-color: #F5F3FF;
+	border: 1px solid #EDE9FE;
+	padding: 0.625rem 2.5rem 0.625rem 2.5rem;
+	font-size: 0.875rem;
+	color: #334155;
+	outline: none;
+	transition: all 0.2s ease;
+	font-family: 'Poppins', 'Open Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+
+	&::placeholder {
+		color: #94A3B8;
+	}
+
+	&:focus {
+		border-color: #818CF8;
+		box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.2);
+	}
+
+	&:hover {
+		border-color: #CBD5E1;
+	}
+}
+
+.searchClear {
+	position: absolute;
+	right: 0.75rem;
+	top: 50%;
+	transform: translateY(-50%);
+	color: #94A3B8;
+	cursor: pointer;
+	transition: color 0.2s ease;
+	background: none;
+	border: none;
+	padding: 0;
+
+	&:hover {
+		color: #475569;
+	}
+}
+
+.searchClearIcon {
+	width: 1rem;
+	height: 1rem;
+}
+
+.fileTreeSectionContentGrid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1rem;
+	max-height: 400px;
+	overflow-y: auto;
+	padding-right: 0.5rem;
+
+	@media (min-width: 768px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	@media (min-width: 1024px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.fileTreeNode {
+	border-radius: 0.5rem;
+	background-color: rgba(255, 255, 255, 0.7);
+	border: 1px solid rgba(255, 255, 255, 0.4);
+	padding: 0.75rem;
+	backdrop-filter: blur(10px);
+	transition: all 0.2s ease;
+
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.9);
+		border-color: #6366F1;
+		box-shadow: 0 2px 8px rgba(99, 102, 241, 0.15);
+	}
+}
+
+.fileTreeNodeHeader {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	cursor: pointer;
+}
+
+.fileTreeNodeHeaderToggle {
+	width: 1rem;
+	height: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.fileTreeNodeHeaderToggleIcon {
+	width: 0.875rem;
+	height: 0.875rem;
+	color: #64748B;
+}
+
+.fileTreeNodeHeaderIcon {
+	width: 1rem;
+	height: 1rem;
+	color: #F59E0B;
+}
+
+.fileTreeNodeHeaderName {
+	font-size: 0.875rem;
+	font-weight: 500;
+	color: #334155;
+	flex: 1;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-family: 'Poppins', 'Open Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+.fileTreeNodeHeaderCount {
+	font-size: 0.625rem;
+	color: #64748B;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+		"Courier New", monospace;
+	background-color: white;
+	padding: 0.125rem 0.375rem;
+	border-radius: 0.25rem;
+	border: 1px solid #E2E8F0;
+}
+
+.fileTreeNodeChildren {
+	margin-top: 0.5rem;
+	padding-left: 1.5rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+
+.fileTreeNodeChildrenItem {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.25rem 0;
+}
+
+.fileTreeNodeChildrenItemIcon {
+	width: 0.875rem;
+	height: 0.875rem;
+
+	&.folder {
+		color: #F59E0B;
+	}
+
+	&.file {
+		color: #06B6D4;
+	}
+}
+
+.fileTreeNodeChildrenItemName {
+	font-size: 0.75rem;
+	color: #475569;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	font-family: 'Poppins', 'Open Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+.fileTreeNodeChildrenItemCount {
+	font-size: 0.5625rem;
+	color: #94A3B8;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+		"Courier New", monospace;
+}
+
+.fileTreeNodeChildrenMore {
+	font-size: 0.625rem;
+	color: #94A3B8;
+	padding-left: 1.25rem;
+	font-family: 'Poppins', 'Open Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}

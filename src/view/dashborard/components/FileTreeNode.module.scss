@@ -1,0 +1,115 @@
+/* File Tree Node Styles */
+.selectNone {
+	user-select: none;
+}
+
+.fileTreeItem {
+	display: flex;
+	align-items: center;
+	gap: 0.625rem;
+	padding: 0.5rem 0.75rem;
+	border-radius: 0.5rem;
+	cursor: pointer;
+	transition: all 0.2s ease;
+
+	&:hover {
+		background-color: #F1F5F9;
+	}
+}
+
+.cursorPointer {
+	cursor: pointer;
+}
+
+.cursorDefault {
+	cursor: default;
+}
+
+.fileTreeToggle {
+	width: 1rem;
+	height: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-shrink: 0;
+}
+
+.chevronDown {
+	width: 0.875rem;
+	height: 0.875rem;
+	color: #64748B;
+}
+
+.chevronRight {
+	width: 0.875rem;
+	height: 0.875rem;
+	color: #94A3B8;
+	transition: color 0.2s ease;
+
+	.fileTreeItem:hover & {
+		color: #64748B;
+	}
+}
+
+.fileTreeIcon {
+	flex-shrink: 0;
+	transition: color 0.2s ease;
+}
+
+.folderIcon {
+	color: #F59E0B;
+	transition: color 0.2s ease;
+
+	.fileTreeItem:hover & {
+		color: #D97706;
+	}
+}
+
+.fileIcon {
+	color: #06B6D4;
+	transition: color 0.2s ease;
+
+	.fileTreeItem:hover & {
+		color: #0891B2;
+	}
+}
+
+.fileName {
+	flex: 1;
+	font-size: 0.875rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	transition: color 0.2s ease;
+	font-family: 'Poppins', 'Open Sans', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+		Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+}
+
+.folderName {
+	font-weight: 500;
+	color: #334155;
+	transition: color 0.2s ease;
+
+	.fileTreeItem:hover & {
+		color: #0F172A;
+	}
+}
+
+.fileText {
+	color: #475569;
+	transition: color 0.2s ease;
+
+	.fileTreeItem:hover & {
+		color: #1E293B;
+	}
+}
+
+.fileCount {
+	font-size: 0.625rem;
+	color: #64748B;
+	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
+		"Courier New", monospace;
+	background-color: #F1F5F9;
+	padding: 0.125rem 0.5rem;
+	border-radius: 0.25rem;
+}

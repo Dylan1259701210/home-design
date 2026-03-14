@@ -1,18 +1,18 @@
 /* Base Styles */
 :root {
-	--background: #f8fafc;
-	--foreground: #0f172a;
-	--primary: #0ea5e9;
+	--background: #f5f3ff;
+	--foreground: #1e1b4b;
+	--primary: #6366f1;
 	--primary-foreground: #ffffff;
-	--secondary: #e0f2fe;
-	--secondary-foreground: #0f172a;
-	--muted: #f1f5f9;
-	--muted-foreground: #64748b;
-	--accent: #dbeafe;
-	--accent-foreground: #0f172a;
-	--border: #e2e8f0;
-	--input: #f1f5f9;
-	--ring: #0ea5e9;
+	--secondary: #818cf8;
+	--secondary-foreground: #1e1b4b;
+	--muted: #e0e7ff;
+	--muted-foreground: #4338ca;
+	--accent: #10b981;
+	--accent-foreground: #ffffff;
+	--border: #ede9fe;
+	--input: #f5f3ff;
+	--ring: #6366f1;
 	--radius: 0.5rem;
 	--shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
 	--shadow-lg:
@@ -64,12 +64,16 @@
 
 	/* Typography */
 	--font-sans:
-		ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-		Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+		"Poppins", "Open Sans", ui-sans-serif, system-ui, -apple-system,
+		BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
+		"Noto Sans", sans-serif;
 	--font-mono:
 		ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
 		"Courier New", monospace;
 }
+
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
 
 /* Box sizing is handled at component level */
 
@@ -78,17 +82,17 @@
 	min-height: 100vh;
 	position: relative;
 	overflow: hidden;
-	background-color: var(--slate-50);
+	background-color: var(--background);
 
 	&::before {
 		content: "";
 		position: absolute;
 		inset: 0;
 		background: radial-gradient(
-			ellipse at top,
-			#e2e8f0 0%,
-			#f1f5f9 50%,
-			#f8fafc 100%
+			ellipse at top right,
+			rgba(99, 102, 241, 0.1) 0%,
+			rgba(16, 185, 129, 0.05) 50%,
+			var(--background) 100%
 		);
 	}
 
@@ -97,11 +101,11 @@
 		position: absolute;
 		top: 0;
 		left: 25%;
-		width: 96px;
-		height: 96px;
-		background-color: rgba(6, 182, 212, 0.1);
+		width: 120px;
+		height: 120px;
+		background-color: rgba(99, 102, 241, 0.2);
 		border-radius: 50%;
-		filter: blur(3xl);
+		filter: blur(4xl);
 	}
 }
 
@@ -151,18 +155,20 @@
 }
 
 .sasMetricCard {
-	background: linear-gradient(135deg, var(--primary), var(--cyan-600));
+	background: linear-gradient(135deg, var(--primary), var(--secondary));
 	color: white;
 	padding: 2rem;
 	border-radius: 1.25rem;
 	transition: all 0.3s ease;
-	box-shadow: 0 8px 24px rgba(14, 165, 233, 0.2);
+	box-shadow: 0 8px 24px rgba(99, 102, 241, 0.2);
 	position: relative;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
 
 	&::before {
 		content: "";
@@ -171,29 +177,32 @@
 		right: 0;
 		width: 100px;
 		height: 100px;
-		background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent);
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
 		border-radius: 0 1.25rem 0 100px;
 	}
 
 	&:hover {
 		transform: translateY(-6px);
-		box-shadow: 0 12px 32px rgba(14, 165, 233, 0.3);
+		box-shadow: 0 12px 32px rgba(99, 102, 241, 0.3);
+		border-color: rgba(255, 255, 255, 0.3);
 	}
 }
 
 .sasMetricCardMigrated {
-	background: linear-gradient(135deg, var(--violet-600), var(--indigo-600));
+	background: linear-gradient(135deg, var(--accent), #059669);
 	color: white;
 	padding: 2rem;
 	border-radius: 1.25rem;
 	transition: all 0.3s ease;
-	box-shadow: 0 8px 24px rgba(124, 58, 237, 0.2);
+	box-shadow: 0 8px 24px rgba(16, 185, 129, 0.2);
 	position: relative;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
 
 	&::before {
 		content: "";
@@ -202,13 +211,14 @@
 		right: 0;
 		width: 100px;
 		height: 100px;
-		background: linear-gradient(135deg, rgba(255, 255, 255, 0.15), transparent);
+		background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
 		border-radius: 0 1.25rem 0 100px;
 	}
 
 	&:hover {
 		transform: translateY(-6px);
-		box-shadow: 0 12px 32px rgba(124, 58, 237, 0.3);
+		box-shadow: 0 12px 32px rgba(16, 185, 129, 0.3);
+		border-color: rgba(255, 255, 255, 0.3);
 	}
 }
 
@@ -294,40 +304,46 @@
 }
 
 .migrationFlowStep {
-	background: linear-gradient(135deg, var(--indigo-600), var(--indigo-500));
+	background: linear-gradient(135deg, var(--primary), var(--secondary));
 	color: white;
 	padding: 1.25rem;
 	border-radius: 0.75rem;
 	min-width: 140px;
 	transition: all 0.3s ease;
-	box-shadow: 0 4px 16px rgba(79, 70, 229, 0.25);
+	box-shadow: 0 4px 16px rgba(99, 102, 241, 0.25);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
 
 	&:hover {
 		transform: translateY(-2px);
-		box-shadow: 0 6px 20px rgba(79, 70, 229, 0.35);
+		box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35);
+		border-color: rgba(255, 255, 255, 0.3);
 	}
 }
 
 .migrationFlowStepMigrated {
-	background: linear-gradient(135deg, var(--violet-600), var(--violet-500));
+	background: linear-gradient(135deg, var(--accent), #059669);
 	color: white;
 	padding: 1.25rem;
 	border-radius: 0.75rem;
 	min-width: 140px;
 	transition: all 0.3s ease;
-	box-shadow: 0 4px 16px rgba(124, 58, 237, 0.25);
+	box-shadow: 0 4px 16px rgba(16, 185, 129, 0.25);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
+	backdrop-filter: blur(10px);
+	border: 1px solid rgba(255, 255, 255, 0.2);
 
 	&:hover {
 		transform: translateY(-2px);
-		box-shadow: 0 6px 20px rgba(124, 58, 237, 0.35);
+		box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
+		border-color: rgba(255, 255, 255, 0.3);
 	}
 }
 
@@ -434,23 +450,6 @@
 	&:hover {
 		background-color: #6b21a8;
 		transform: translateY(-2px);
-	}
-
-	&::after {
-		content: "";
-		position: absolute;
-		bottom: 0.75rem;
-		left: 50%;
-		transform: translateX(-50%);
-		width: 60%;
-		height: 2px;
-		background-image: repeating-linear-gradient(
-			to right,
-			transparent,
-			transparent 4px,
-			white 4px,
-			white 6px
-		);
 	}
 }
 
@@ -911,10 +910,11 @@
 /* File Tree Section */
 .fileTreeSection {
 	border-radius: 1rem;
-	background-color: rgba(255, 255, 255, 0.8);
+	background-color: rgba(255, 255, 255, 0.85);
 	backdrop-filter: blur(24px);
-	border: 1px solid rgba(226, 232, 240, 0.6);
+	border: 1px solid rgba(255, 255, 255, 0.3);
 	overflow: hidden;
+	box-shadow: 0 4px 16px rgba(99, 102, 241, 0.1);
 }
 
 .fileTreeSectionHeader {
@@ -1096,9 +1096,17 @@
 /* File Tree Node */
 .fileTreeNode {
 	border-radius: 0.5rem;
-	background-color: rgba(241, 245, 249, 0.5);
-	border: 1px solid rgba(226, 232, 240, 0.6);
+	background-color: rgba(255, 255, 255, 0.7);
+	border: 1px solid rgba(255, 255, 255, 0.4);
 	padding: 0.75rem;
+	backdrop-filter: blur(10px);
+	transition: all 0.2s ease;
+
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.9);
+		border-color: var(--primary);
+		box-shadow: 0 2px 8px rgba(99, 102, 241, 0.15);
+	}
 }
 
 .fileTreeNodeHeader {
