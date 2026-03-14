@@ -8,11 +8,18 @@ interface MetricCardProps {
 	isMigrated?: boolean;
 }
 
+const formatNumber = (num: string): string => {
+	const number = parseFloat(num);
+	if (isNaN(number)) return num;
+	return number.toLocaleString();
+};
+
 export const MetricCard: React.FC<MetricCardProps> = ({
 	number,
 	title,
 	isMigrated = false,
 }) => {
+	const formattedNumber = formatNumber(number);
 	return (
 		<div
 			className={
@@ -20,7 +27,7 @@ export const MetricCard: React.FC<MetricCardProps> = ({
 			}
 		>
 			<div className={styles.sasMetricCardContent}>
-				<p className={styles.sasMetricNumber}>{number}</p>
+				<p className={styles.sasMetricNumber}>{formattedNumber}</p>
 				<p className={styles.sasMetricTitle}>{title}</p>
 			</div>
 		</div>

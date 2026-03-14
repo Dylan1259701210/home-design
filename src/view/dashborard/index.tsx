@@ -12,9 +12,9 @@ import FileTreeSection from "./components/FileTreeSection";
 export const Dashboard = () => {
 	// Define migration steps data
 	const migrationSteps = [
-		{ number: "9,871", title: "Analysis Completed" },
-		{ number: "9,871", title: "Conversion Completed" },
-		{ number: "9,871", title: "Code Validation Completed" },
+		{ number: "9871", title: "Analysis Completed" },
+		{ number: "9871", title: "Conversion Completed" },
+		{ number: "9871", title: "Code Validation Completed" },
 		{ number: "36", title: "Data Validation Completed", isMigrated: true },
 		{ number: "36", title: "Optimization Completed", isMigrated: true },
 		{ number: "36", title: "Migration Completed", isMigrated: true },
@@ -30,12 +30,12 @@ export const Dashboard = () => {
 				<section className={styles.metricsSection}>
 					<div className={styles.sasMetricsGrid}>
 						<MetricCard
-							number="1,676,852"
+							number="1676852"
 							title="No. of SAS Programs To Be Converted"
 							badge="Pending"
 						/>
 						<MetricCard
-							number="9,871"
+							number="9871"
 							title="No. of SAS Programs Converted"
 							badge="Completed"
 						/>
