@@ -43,7 +43,6 @@ export const Dashboard = () => {
 							number="36"
 							title="No. of SAS Programs Migrated"
 							badge="Migrated"
-							isMigrated
 						/>
 					</div>
 
