@@ -1,56 +1,71 @@
 /* Base Styles */
 :root {
-	--background: #f5f3ff;
-	--foreground: #1e1b4b;
-	--primary: #6366f1;
+	/* Primary Colors - Modern Tech Theme (Light) */
+	--background: #f8fafc;
+	--foreground: #1e293b;
+	--primary: #0ea5e9;
 	--primary-foreground: #ffffff;
-	--secondary: #818cf8;
-	--secondary-foreground: #1e1b4b;
-	--muted: #e0e7ff;
-	--muted-foreground: #4338ca;
-	--accent: #10b981;
+	--secondary: #6366f1;
+	--secondary-foreground: #ffffff;
+	--accent: #14b8a6;
 	--accent-foreground: #ffffff;
-	--border: #ede9fe;
-	--input: #f5f3ff;
-	--ring: #6366f1;
-	--radius: 0.5rem;
-	--shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+	--muted: #f1f5f9;
+	--muted-foreground: #64748b;
+	--border: #e2e8f0;
+	--input: #ffffff;
+	--ring: #0ea5e9;
+
+	/* Spacing System */
+	--space-1: 0.25rem;
+	--space-2: 0.5rem;
+	--space-3: 0.75rem;
+	--space-4: 1rem;
+	--space-5: 1.25rem;
+	--space-6: 1.5rem;
+	--space-8: 2rem;
+	--space-10: 2.5rem;
+	--space-12: 3rem;
+	--space-16: 4rem;
+	--space-20: 5rem;
+	--space-24: 6rem;
+	--space-32: 8rem;
+
+	/* Border Radius */
+	--radius-sm: 0.375rem;
+	--radius-md: 0.5rem;
+	--radius-lg: 0.75rem;
+	--radius-xl: 1rem;
+	--radius-2xl: 1.5rem;
+	--radius-3xl: 2rem;
+	--radius-full: 9999px;
+
+	/* Shadows */
+	--shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+	--shadow: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
+	--shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5), 0 2px 4px -2px rgb(0 0 0 / 0.5);
 	--shadow-lg:
-		0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+		0 10px 15px -3px rgb(0 0 0 / 0.6), 0 4px 6px -4px rgb(0 0 0 / 0.6);
 	--shadow-xl:
-		0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+		0 20px 25px -5px rgb(0 0 0 / 0.7), 0 8px 10px -6px rgb(0 0 0 / 0.7);
+	--shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.8);
+
+	/* Glow Effects */
+	--glow-primary: 0 0 25px rgba(14, 165, 233, 0.4);
+	--glow-secondary: 0 0 25px rgba(99, 102, 241, 0.4);
+	--glow-accent: 0 0 25px rgba(20, 184, 166, 0.4);
+
+	/* Transitions */
+	--transition-fast: 0.15s ease-out;
+	--transition-normal: 0.3s ease-out;
+	--transition-slow: 0.5s ease-out;
 
 	/* Color Palette */
-	--cyan-50: #ecfeff;
-	--cyan-100: #cffafe;
-	--cyan-200: #a5f3fc;
-	--cyan-500: #06b6d4;
-	--cyan-600: #0891b2;
-	--indigo-50: #eef2ff;
-	--indigo-100: #e0e7ff;
-	--indigo-200: #c7d2fe;
+	--blue-500: #0ea5e9;
+	--blue-600: #0284c7;
 	--indigo-500: #6366f1;
 	--indigo-600: #4f46e5;
-	--emerald-50: #ecfdf5;
-	--emerald-100: #d1fae5;
-	--emerald-200: #a7f3d0;
-	--emerald-500: #10b981;
-	--emerald-600: #059669;
-	--violet-50: #f5f3ff;
-	--violet-100: #ede9fe;
-	--violet-200: #ddd6fe;
-	--violet-500: #8b5cf6;
-	--violet-600: #7c3aed;
-	--orange-50: #fff7ed;
-	--orange-100: #ffedd5;
-	--orange-200: #fed7aa;
-	--orange-500: #f97316;
-	--orange-600: #ea580c;
-	--amber-50: #fffbeb;
-	--amber-100: #fef3c7;
-	--amber-200: #fde68a;
-	--amber-500: #f59e0b;
-	--amber-600: #d97706;
+	--teal-500: #14b8a6;
+	--teal-600: #0d9488;
 	--slate-50: #f8fafc;
 	--slate-100: #f1f5f9;
 	--slate-200: #e2e8f0;
@@ -64,16 +79,72 @@
 
 	/* Typography */
 	--font-sans:
-		"Poppins", "Open Sans", ui-sans-serif, system-ui, -apple-system,
-		BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial,
-		"Noto Sans", sans-serif;
+		"Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, -apple-system,
+		BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 	--font-mono:
-		ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
-		"Courier New", monospace;
+		"Geist Mono", "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco,
+		Consolas, monospace;
+	--font-display:
+		"Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, -apple-system,
+		BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+	/* Gradients */
+	--gradient-primary: linear-gradient(135deg, var(--primary), var(--secondary));
+	--gradient-secondary: linear-gradient(
+		135deg,
+		var(--secondary),
+		var(--accent)
+	);
+	--gradient-accent: linear-gradient(135deg, var(--accent), var(--primary));
+	--gradient-background: linear-gradient(
+		135deg,
+		rgba(14, 165, 233, 0.05),
+		rgba(99, 102, 241, 0.05),
+		rgba(20, 184, 166, 0.05)
+	);
+
+	/* Animations */
+	--animation-fade-in: fadeIn 0.5s ease-out;
+	--animation-slide-up: slideUp 0.5s ease-out;
+	--animation-pulse: pulse 2s infinite;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideUp {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+@keyframes pulse {
+	0%,
+	100% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0.7;
+	}
 }
 
 /* Import Google Fonts */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+
+/* Geist Mono is available through CDN or local installation */
+/* For this implementation, we'll use JetBrains Mono as fallback */
 
 /* Box sizing is handled at component level */
 
@@ -82,30 +153,58 @@
 	min-height: 100vh;
 	position: relative;
 	overflow: hidden;
+	background: var(--gradient-background);
 	background-color: var(--background);
 
 	&::before {
 		content: "";
 		position: absolute;
 		inset: 0;
-		background: radial-gradient(
-			ellipse at top right,
-			rgba(99, 102, 241, 0.1) 0%,
-			rgba(16, 185, 129, 0.05) 50%,
-			var(--background) 100%
-		);
+		background:
+			radial-gradient(
+				ellipse at top right,
+				rgba(14, 165, 233, 0.05) 0%,
+				transparent 50%
+			),
+			radial-gradient(
+				ellipse at bottom left,
+				rgba(99, 102, 241, 0.05) 0%,
+				transparent 50%
+			),
+			radial-gradient(
+				ellipse at center,
+				rgba(20, 184, 166, 0.02) 0%,
+				transparent 70%
+			);
+		z-index: 1;
 	}
 
 	&::after {
 		content: "";
 		position: absolute;
-		top: 0;
-		left: 25%;
-		width: 120px;
-		height: 120px;
-		background-color: rgba(99, 102, 241, 0.2);
+		top: -100px;
+		left: 20%;
+		width: 300px;
+		height: 300px;
+		background: linear-gradient(135deg, var(--primary), var(--secondary));
 		border-radius: 50%;
-		filter: blur(4xl);
+		filter: blur(150px);
+		opacity: 0.1;
+		z-index: 1;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		bottom: -100px;
+		right: 20%;
+		width: 250px;
+		height: 250px;
+		background: linear-gradient(135deg, var(--accent), var(--secondary));
+		border-radius: 50%;
+		filter: blur(120px);
+		opacity: 0.08;
+		z-index: 1;
 	}
 }
 
@@ -113,28 +212,83 @@
 	position: relative;
 	z-index: 10;
 	padding: 1.5rem;
+	max-width: 1400px;
+	margin: 0 auto;
+	width: 100%;
 
 	@media (min-width: 768px) {
 		padding: 2rem;
 	}
+
+	@media (min-width: 1024px) {
+		padding: 2.5rem;
+	}
+}
+
+/* Section Animations */
+.metricsSection,
+.fileTreeSection {
+	animation: var(--animation-slide-up);
+	animation-fill-mode: both;
+}
+
+.metricsSection {
+	animation-delay: 0.1s;
+}
+
+.fileTreeSection {
+	animation-delay: 0.3s;
 }
 
 /* Header */
 .header {
-	margin-bottom: 2rem;
+	margin-bottom: 3rem;
+	animation: var(--animation-slide-up);
+	animation-fill-mode: both;
+	animation-delay: 0s;
 }
 
 .headerContent {
-	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.headerLeft {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+
+.headerIcon {
+	transition: all var(--transition-normal);
+
+	&:hover {
+		transform: scale(1.05);
+		box-shadow: var(--glow-primary);
+	}
 }
 
 .headerTitle {
-	font-size: 1.75rem;
-	font-weight: 700;
-	line-height: 1.2;
-	color: var(--slate-900);
-	text-align: center;
+	font-size: 2rem;
+	font-weight: 800;
+	line-height: 1.1;
+	color: var(--foreground);
 	margin: 0;
+	font-family: var(--font-display);
+	background: linear-gradient(135deg, var(--foreground), var(--primary));
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	transition: all var(--transition-normal);
+
+	@media (min-width: 768px) {
+		font-size: 2.5rem;
+	}
+
+	@media (min-width: 1024px) {
+		font-size: 3rem;
+	}
 }
 
 /* Metrics Section */
@@ -147,147 +301,156 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	gap: 1.5rem;
-	margin-bottom: 2.5rem;
+	margin-bottom: 3rem;
 
 	@media (min-width: 640px) {
 		grid-template-columns: repeat(3, 1fr);
 	}
+
+	@media (min-width: 1024px) {
+		gap: 2rem;
+	}
 }
 
 .sasMetricCard {
-	background: linear-gradient(135deg, var(--primary), var(--secondary));
-	color: white;
-	padding: 2rem;
-	border-radius: 1.25rem;
-	transition: all 0.3s ease;
-	box-shadow: 0 8px 24px rgba(99, 102, 241, 0.2);
+	background: white;
+	color: var(--foreground);
+	padding: 2.5rem;
+	border-radius: var(--radius-2xl);
+	transition: all var(--transition-normal);
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 	position: relative;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	backdrop-filter: blur(10px);
-	border: 1px solid rgba(255, 255, 255, 0.2);
+	border: 1px solid var(--border);
 
 	&::before {
 		content: "";
 		position: absolute;
 		top: 0;
+		left: 0;
 		right: 0;
-		width: 100px;
-		height: 100px;
-		background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
-		border-radius: 0 1.25rem 0 100px;
+		height: 4px;
+		background: linear-gradient(90deg, var(--primary), var(--secondary));
 	}
 
 	&:hover {
-		transform: translateY(-6px);
-		box-shadow: 0 12px 32px rgba(99, 102, 241, 0.3);
-		border-color: rgba(255, 255, 255, 0.3);
+		transform: translateY(-4px);
+		box-shadow: 0 8px 24px rgba(14, 165, 233, 0.15);
+		border-color: var(--primary);
 	}
 }
 
 .sasMetricCardMigrated {
-	background: linear-gradient(135deg, var(--accent), #059669);
-	color: white;
-	padding: 2rem;
-	border-radius: 1.25rem;
-	transition: all 0.3s ease;
-	box-shadow: 0 8px 24px rgba(16, 185, 129, 0.2);
+	background: white;
+	color: var(--foreground);
+	padding: 2.5rem;
+	border-radius: var(--radius-2xl);
+	transition: all var(--transition-normal);
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 	position: relative;
 	overflow: hidden;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	backdrop-filter: blur(10px);
-	border: 1px solid rgba(255, 255, 255, 0.2);
+	border: 1px solid var(--border);
 
 	&::before {
 		content: "";
 		position: absolute;
 		top: 0;
+		left: 0;
 		right: 0;
-		width: 100px;
-		height: 100px;
-		background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent);
-		border-radius: 0 1.25rem 0 100px;
+		height: 4px;
+		background: linear-gradient(90deg, var(--accent), var(--teal-600));
 	}
 
 	&:hover {
-		transform: translateY(-6px);
-		box-shadow: 0 12px 32px rgba(16, 185, 129, 0.3);
-		border-color: rgba(255, 255, 255, 0.3);
+		transform: translateY(-4px);
+		box-shadow: 0 8px 24px rgba(20, 184, 166, 0.15);
+		border-color: var(--accent);
 	}
 }
 
 .sasMetricCardContent {
 	display: flex;
 	flex-direction: column;
-	gap: 1rem;
+	gap: 1.5rem;
 	position: relative;
 	z-index: 10;
 	width: 100%;
 }
 
 .sasMetricNumber {
-	font-size: 3rem;
+	font-size: 3.5rem;
 	font-weight: 800;
 	line-height: 1;
-	font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+	font-family: var(--font-mono);
 	text-align: center;
 	margin: 0;
-	text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
-	background: linear-gradient(135deg, #ffffff, #e0e7ff);
+	background: linear-gradient(135deg, var(--foreground), var(--primary));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
-	transition: all 0.3s ease;
+	transition: all var(--transition-normal);
 
 	.sasMetricCard:hover & {
 		transform: scale(1.05);
-		text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+	}
+
+	@media (min-width: 768px) {
+		font-size: 4rem;
 	}
 }
 
 .sasMetricTitle {
-	font-size: 0.9375rem;
-	font-weight: 500;
+	font-size: 1rem;
+	font-weight: 600;
 	line-height: 1.4;
 	flex: 1;
-	opacity: 0.95;
 	text-align: center;
 	margin: 0;
+	letter-spacing: 0.02em;
+	color: var(--foreground);
 }
 
 .sasMetricBadge {
-	padding: 0.4375rem 1rem;
-	border-radius: 9999px;
-	background-color: rgba(255, 255, 255, 0.2);
-	font-size: 0.75rem;
+	padding: 0.5rem 1.25rem;
+	border-radius: var(--radius-full);
+	background-color: rgba(14, 165, 233, 0.1);
+	font-size: 0.875rem;
 	font-weight: 600;
 	align-self: center;
-	transition: all 0.3s ease;
+	transition: all var(--transition-normal);
+	border: 1px solid rgba(14, 165, 233, 0.2);
+	color: var(--primary);
 
 	&:hover {
-		background-color: rgba(255, 255, 255, 0.3);
+		background-color: rgba(14, 165, 233, 0.2);
 		transform: scale(1.05);
+		border-color: var(--primary);
 	}
 }
 
 .sasMetricBadgeMigrated {
-	padding: 0.4375rem 1rem;
-	border-radius: 9999px;
-	background-color: rgba(255, 255, 255, 0.2);
-	font-size: 0.75rem;
+	padding: 0.5rem 1.25rem;
+	border-radius: var(--radius-full);
+	background-color: rgba(20, 184, 166, 0.1);
+	font-size: 0.875rem;
 	font-weight: 600;
 	align-self: center;
-	transition: all 0.3s ease;
+	transition: all var(--transition-normal);
+	border: 1px solid rgba(20, 184, 166, 0.2);
+	color: var(--accent);
 
 	&:hover {
-		background-color: rgba(255, 255, 255, 0.3);
+		background-color: rgba(20, 184, 166, 0.2);
 		transform: scale(1.05);
+		border-color: var(--accent);
 	}
 }
 
@@ -297,130 +460,167 @@
 }
 
 .migrationFlowTitle {
-	font-size: 1.25rem;
-	font-weight: 600;
-	color: var(--slate-900);
-	margin-bottom: 1.5rem;
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--foreground);
+	margin-bottom: 2rem;
 	display: flex;
 	align-items: center;
-	gap: 0.75rem;
+	gap: 1rem;
+	font-family: var(--font-display);
 }
 
 .migrationFlowSteps {
 	display: flex;
-	align-items: flex-start;
+	align-items: center;
 	flex-wrap: wrap;
-	gap: 1rem;
-	margin-bottom: 2rem;
+	gap: 1.5rem;
+	margin-bottom: 2.5rem;
+	position: relative;
+}
+
+/* Flow line */
+.migrationFlowSteps::before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	height: 2px;
+	background: linear-gradient(
+		90deg,
+		var(--primary),
+		var(--secondary),
+		var(--accent)
+	);
+	transform: translateY(-50%);
+	z-index: 1;
+	opacity: 0.6;
 }
 
 .migrationFlowStep {
-	background: linear-gradient(135deg, var(--primary), var(--secondary));
-	color: white;
-	padding: 1.25rem;
-	border-radius: 0.75rem;
-	min-width: 140px;
-	transition: all 0.3s ease;
-	box-shadow: 0 4px 16px rgba(99, 102, 241, 0.25);
+	background: white;
+	color: var(--foreground);
+	padding: 1.5rem;
+	border-radius: var(--radius-xl);
+	min-width: 150px;
+	transition: all var(--transition-normal);
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	backdrop-filter: blur(10px);
-	border: 1px solid rgba(255, 255, 255, 0.2);
+	border: 1px solid var(--border);
+	position: relative;
+	z-index: 2;
 
 	&:hover {
-		transform: translateY(-2px);
-		box-shadow: 0 6px 20px rgba(99, 102, 241, 0.35);
-		border-color: rgba(255, 255, 255, 0.3);
+		transform: translateY(-4px);
+		box-shadow: 0 8px 24px rgba(14, 165, 233, 0.15);
+		border-color: var(--primary);
 	}
 }
 
 .migrationFlowStepMigrated {
-	background: linear-gradient(135deg, var(--accent), #059669);
-	color: white;
-	padding: 1.25rem;
-	border-radius: 0.75rem;
-	min-width: 140px;
-	transition: all 0.3s ease;
-	box-shadow: 0 4px 16px rgba(16, 185, 129, 0.25);
+	background: white;
+	color: var(--foreground);
+	padding: 1.5rem;
+	border-radius: var(--radius-xl);
+	min-width: 150px;
+	transition: all var(--transition-normal);
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	backdrop-filter: blur(10px);
-	border: 1px solid rgba(255, 255, 255, 0.2);
+	border: 1px solid var(--border);
+	position: relative;
+	z-index: 2;
 
 	&:hover {
-		transform: translateY(-2px);
-		box-shadow: 0 6px 20px rgba(16, 185, 129, 0.35);
-		border-color: rgba(255, 255, 255, 0.3);
+		transform: translateY(-4px);
+		box-shadow: 0 8px 24px rgba(20, 184, 166, 0.15);
+		border-color: var(--accent);
 	}
 }
 
 .migrationFlowStepContent {
 	display: flex;
 	flex-direction: column;
-	gap: 0.5rem;
+	gap: 0.75rem;
 	width: 100%;
 }
 
 .migrationFlowStepNumber {
-	font-size: 1.5rem;
+	font-size: 1.75rem;
 	font-weight: 800;
 	line-height: 1;
 	text-align: center;
 	margin: 0;
-	text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-	background: linear-gradient(135deg, #ffffff, #e0e7ff);
+	background: linear-gradient(135deg, var(--foreground), var(--primary));
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	background-clip: text;
-	transition: all 0.3s ease;
+	transition: all var(--transition-normal);
 
 	.migrationFlowStep:hover & {
 		transform: scale(1.1);
-		text-shadow: 0 0 25px rgba(255, 255, 255, 0.6);
 	}
 }
 
 .migrationFlowStepTitle {
-	font-size: 0.75rem;
-	font-weight: 500;
+	font-size: 0.875rem;
+	font-weight: 600;
 	line-height: 1.3;
 	flex: 1;
 	text-align: center;
 	margin: 0;
+	letter-spacing: 0.01em;
+	color: var(--foreground);
 }
 
-.migrationFlowStepProgress {
-	height: 4px;
-	background-color: rgba(255, 255, 255, 0.2);
-	border-radius: 9999px;
-	overflow: hidden;
+.migrationFlowStepIcon {
+	background: rgba(14, 165, 233, 0.1);
+	color: var(--primary);
+	border-radius: 50%;
+	width: 24px;
+	height: 24px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 2px 8px rgba(14, 165, 233, 0.2);
+	transition: all var(--transition-normal);
 	margin-top: 0.5rem;
+
+	.migrationFlowStep:hover & {
+		transform: scale(1.1);
+		background: rgba(14, 165, 233, 0.2);
+	}
 }
 
-.migrationFlowStepProgressBar {
-	height: 100%;
-	background-color: #22c55e;
-	border-radius: 9999px;
-	transition: width 0.5s ease;
-}
+.migrationFlowStepIconCompleted {
+	background: rgba(20, 184, 166, 0.1);
+	color: var(--accent);
+	box-shadow: 0 2px 8px rgba(20, 184, 166, 0.2);
 
-.migrationFlowStepProgressBarMigrated {
-	height: 100%;
-	background-color: #fde68a;
-	border-radius: 9999px;
-	transition: width 0.5s ease;
+	.migrationFlowStep:hover & {
+		background: rgba(20, 184, 166, 0.2);
+	}
 }
 
 .migrationFlowArrow {
-	color: #64748b;
-	width: 1.25rem;
-	height: 1.25rem;
+	color: var(--muted-foreground);
+	width: 1.5rem;
+	height: 1.5rem;
 	flex-shrink: 0;
-	margin-top: 1.5rem;
+	position: relative;
+	z-index: 2;
+	transition: all var(--transition-normal);
+
+	&:hover {
+		color: var(--primary);
+		transform: scale(1.1);
+	}
 }
 
 .migrationFlowFooter {
@@ -429,49 +629,52 @@
 	align-items: center;
 	flex-wrap: wrap;
 	gap: 1.5rem;
-	margin-top: 2rem;
-	padding-top: 1.5rem;
-	border-top: 1px solid var(--slate-200);
+	margin-top: 3rem;
+	padding-top: 2rem;
+	border-top: 1px solid var(--border);
 }
 
 .migrationFlowFooterLeft {
 	display: flex;
 	align-items: center;
-	gap: 0.75rem;
-	background-color: #1e40af;
-	color: white;
-	padding: 0.875rem 1.75rem;
-	border-radius: 0.75rem;
+	gap: 1rem;
+	background: white;
+	color: var(--primary);
+	padding: 1rem 2rem;
+	border-radius: var(--radius-xl);
 	font-size: 0.875rem;
-	font-weight: 500;
+	font-weight: 600;
 	flex: 1;
 	justify-content: center;
-	transition: all 0.3s ease;
+	transition: all var(--transition-normal);
+	border: 1px solid var(--border);
 
 	&:hover {
-		background-color: #1e3a8a;
 		transform: translateY(-2px);
+		box-shadow: 0 4px 16px rgba(14, 165, 233, 0.15);
+		border-color: var(--primary);
 	}
 }
 
 .migrationFlowFooterRight {
 	display: flex;
 	align-items: center;
-	gap: 0.75rem;
-	background-color: #7e22ce;
-	color: white;
-	padding: 0.875rem 1.75rem;
-	border-radius: 0.75rem;
+	gap: 1rem;
+	background: white;
+	color: var(--accent);
+	padding: 1rem 2rem;
+	border-radius: var(--radius-xl);
 	font-size: 0.875rem;
-	font-weight: 500;
+	font-weight: 600;
 	flex: 1;
 	justify-content: center;
-	transition: all 0.3s ease;
-	position: relative;
+	transition: all var(--transition-normal);
+	border: 1px solid var(--border);
 
 	&:hover {
-		background-color: #6b21a8;
 		transform: translateY(-2px);
+		box-shadow: 0 4px 16px rgba(20, 184, 166, 0.15);
+		border-color: var(--accent);
 	}
 }
 
@@ -479,16 +682,26 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 1.5rem;
-	height: 1.5rem;
-	background-color: rgba(255, 255, 255, 0.2);
-	border-radius: 0.375rem;
+	width: 1.75rem;
+	height: 1.75rem;
+	background-color: rgba(14, 165, 233, 0.1);
+	border-radius: var(--radius-md);
+	border: 1px solid rgba(14, 165, 233, 0.2);
 }
 
 .migrationFlowFooterIconSvg {
-	width: 0.875rem;
-	height: 0.875rem;
-	color: white;
+	width: 1rem;
+	height: 1rem;
+	color: var(--primary);
+}
+
+.migrationFlowFooterRight .migrationFlowFooterIcon {
+	background-color: rgba(20, 184, 166, 0.1);
+	border-color: rgba(20, 184, 166, 0.2);
+}
+
+.migrationFlowFooterRight .migrationFlowFooterIconSvg {
+	color: var(--accent);
 }
 
 /* Metric Card */
@@ -931,12 +1144,17 @@
 
 /* File Tree Section */
 .fileTreeSection {
-	border-radius: 1rem;
-	background-color: rgba(255, 255, 255, 0.85);
-	backdrop-filter: blur(24px);
-	border: 1px solid rgba(255, 255, 255, 0.3);
+	border-radius: var(--radius-2xl);
+	background-color: white;
+	border: 1px solid var(--border);
 	overflow: hidden;
-	box-shadow: 0 4px 16px rgba(99, 102, 241, 0.1);
+	box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+	transition: all var(--transition-normal);
+
+	&:hover {
+		box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+		border-color: var(--primary);
+	}
 }
 
 .fileTreeSectionHeader {
@@ -944,39 +1162,40 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 1rem;
-	transition: background-color 0.2s ease;
+	padding: 1.25rem;
+	transition: all var(--transition-normal);
 	background: none;
 	border: none;
 	cursor: pointer;
 
 	&:hover {
-		background-color: var(--slate-50);
+		background-color: var(--muted);
 	}
 }
 
 .fileTreeSectionHeaderLeft {
 	display: flex;
 	align-items: center;
-	gap: 0.75rem;
+	gap: 1rem;
 }
 
 .fileTreeSectionHeaderIcon {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 0.5rem;
-	border-radius: 0.5rem;
+	padding: 0.625rem;
+	border-radius: var(--radius-lg);
 	background: linear-gradient(
 		to bottom right,
-		var(--amber-500),
-		var(--orange-500)
+		var(--primary),
+		var(--secondary)
 	);
+	box-shadow: 0 4px 16px rgba(14, 165, 233, 0.3);
 }
 
 .fileTreeSectionHeaderIconSvg {
-	width: 1rem;
-	height: 1rem;
+	width: 1.125rem;
+	height: 1.125rem;
 	color: white;
 }
 
@@ -985,126 +1204,135 @@
 }
 
 .fileTreeSectionHeaderTitle {
-	font-size: 1rem;
+	font-size: 1.125rem;
 	font-weight: 600;
-	color: var(--slate-900);
+	color: var(--foreground);
+	margin: 0 0 0.25rem 0;
 }
 
 .fileTreeSectionHeaderSubtitle {
-	font-size: 0.75rem;
-	color: var(--slate-500);
+	font-size: 0.875rem;
+	color: var(--muted-foreground);
+	margin: 0;
 }
 
 .fileTreeSectionHeaderRight {
 	display: flex;
 	align-items: center;
-	gap: 0.75rem;
+	gap: 1rem;
 }
 
 .fileTreeSectionHeaderStatus {
 	display: flex;
 	align-items: center;
-	gap: 0.5rem;
-	font-size: 0.75rem;
-	color: var(--slate-500);
+	gap: 0.75rem;
+	font-size: 0.875rem;
+	color: var(--muted-foreground);
 }
 
 .securityIcon {
-	width: 0.875rem;
-	height: 0.875rem;
-	color: var(--emerald-500);
+	width: 1rem;
+	height: 1rem;
+	color: var(--accent);
 }
 
 .lockIcon {
-	width: 0.875rem;
-	height: 0.875rem;
-	color: var(--cyan-500);
+	width: 1rem;
+	height: 1rem;
+	color: var(--primary);
 	margin-left: 0.5rem;
 }
 
 .fileTreeSectionHeaderToggle {
-	width: 1rem;
-	height: 1rem;
-	color: var(--slate-400);
+	width: 1.125rem;
+	height: 1.125rem;
+	color: var(--muted-foreground);
+	transition: all var(--transition-normal);
+
+	.fileTreeSectionHeader:hover & {
+		color: var(--foreground);
+		transform: rotate(180deg);
+	}
 }
 
 .fileTreeSectionContent {
-	border-top: 1px solid var(--slate-200);
+	border-top: 1px solid var(--border);
 }
 
 .fileTreeSectionContentInner {
-	padding: 1rem;
+	padding: 1.5rem;
 }
 
 .fileTreeSectionContentSearch {
 	position: relative;
-	margin-bottom: 1rem;
+	margin-bottom: 1.5rem;
 }
 
 .searchIcon {
 	position: absolute;
-	left: 0.75rem;
+	left: 1rem;
 	top: 50%;
 	transform: translateY(-50%);
-	width: 1rem;
-	height: 1rem;
-	color: var(--slate-400);
+	width: 1.125rem;
+	height: 1.125rem;
+	color: var(--muted-foreground);
 }
 
 .searchInput {
 	width: 100%;
-	border-radius: 0.5rem;
-	background-color: var(--slate-50);
-	border: 1px solid var(--slate-200);
-	padding: 0.625rem 2.5rem 0.625rem 2.5rem;
+	border-radius: var(--radius-lg);
+	background-color: var(--input);
+	border: 1px solid var(--border);
+	padding: 0.75rem 3rem 0.75rem 3rem;
 	font-size: 0.875rem;
-	color: var(--slate-700);
+	color: var(--foreground);
 	outline: none;
-	transition: all 0.2s ease;
+	transition: all var(--transition-normal);
 
 	&::placeholder {
-		color: var(--slate-400);
+		color: var(--muted-foreground);
 	}
 
 	&:focus {
-		border-color: var(--cyan-400);
-		box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.2);
+		border-color: var(--primary);
+		box-shadow: 0 0 0 2px rgba(14, 165, 233, 0.2);
 	}
 
 	&:hover {
-		border-color: var(--slate-300);
+		border-color: rgba(255, 255, 255, 0.2);
 	}
 }
 
 .searchClear {
 	position: absolute;
-	right: 0.75rem;
+	right: 1rem;
 	top: 50%;
 	transform: translateY(-50%);
-	color: var(--slate-400);
+	color: var(--muted-foreground);
 	cursor: pointer;
-	transition: color 0.2s ease;
+	transition: all var(--transition-normal);
 	background: none;
 	border: none;
 	padding: 0;
 
 	&:hover {
-		color: var(--slate-600);
+		color: var(--foreground);
+		transform: translateY(-50%) scale(1.1);
 	}
 }
 
 .searchClearIcon {
-	width: 1rem;
-	height: 1rem;
+	width: 1.125rem;
+	height: 1.125rem;
 }
 
 .fileTreeSectionContentGrid {
 	display: grid;
 	grid-template-columns: 1fr;
-	gap: 1rem;
+	gap: 1.25rem;
 	max-height: 400px;
 	overflow-y: auto;
-	padding-right: 0.5rem;
+	padding-right: 0.75rem;
 
 	@media (min-width: 768px) {
 		grid-template-columns: repeat(2, 1fr);
@@ -1113,55 +1341,78 @@
 	@media (min-width: 1024px) {
 		grid-template-columns: repeat(3, 1fr);
 	}
+
+	/* Custom scrollbar */
+	&::-webkit-scrollbar {
+		width: 6px;
+	}
+
+	&::-webkit-scrollbar-track {
+		background: var(--muted);
+		border-radius: var(--radius-full);
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: var(--border);
+		border-radius: var(--radius-full);
+	}
+
+	&::-webkit-scrollbar-thumb:hover {
+		background: var(--primary);
+	}
 }
 
 /* File Tree Node */
 .fileTreeNode {
-	border-radius: 0.5rem;
-	background-color: rgba(255, 255, 255, 0.7);
-	border: 1px solid rgba(255, 255, 255, 0.4);
-	padding: 0.75rem;
-	backdrop-filter: blur(10px);
-	transition: all 0.2s ease;
+	border-radius: var(--radius-lg);
+	background-color: var(--muted);
+	border: 1px solid var(--border);
+	padding: 1rem;
+	transition: all var(--transition-normal);
 
 	&:hover {
-		background-color: rgba(255, 255, 255, 0.9);
+		background-color: white;
 		border-color: var(--primary);
-		box-shadow: 0 2px 8px rgba(99, 102, 241, 0.15);
+		box-shadow: 0 2px 8px rgba(14, 165, 233, 0.15);
 	}
 }
 
 .fileTreeNodeHeader {
 	display: flex;
 	align-items: center;
-	gap: 0.5rem;
+	gap: 0.75rem;
 	cursor: pointer;
 }
 
 .fileTreeNodeHeaderToggle {
-	width: 1rem;
-	height: 1rem;
+	width: 1.125rem;
+	height: 1.125rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
 .fileTreeNodeHeaderToggleIcon {
-	width: 0.875rem;
-	height: 0.875rem;
-	color: var(--slate-500);
+	width: 1rem;
+	height: 1rem;
+	color: var(--muted-foreground);
+	transition: all var(--transition-normal);
+
+	.fileTreeNode:hover & {
+		color: var(--foreground);
+	}
 }
 
 .fileTreeNodeHeaderIcon {
-	width: 1rem;
-	height: 1rem;
-	color: var(--amber-500);
+	width: 1.125rem;
+	height: 1.125rem;
+	color: var(--primary);
 }
 
 .fileTreeNodeHeaderName {
 	font-size: 0.875rem;
 	font-weight: 500;
-	color: var(--slate-700);
+	color: var(--foreground);
 	flex: 1;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -1169,61 +1420,76 @@
 }
 
 .fileTreeNodeHeaderCount {
-	font-size: 0.625rem;
-	color: var(--slate-500);
+	font-size: 0.75rem;
+	color: var(--muted-foreground);
 	font-family: var(--font-mono);
-	background-color: white;
-	padding: 0.125rem 0.375rem;
-	border-radius: 0.25rem;
-	border: 1px solid var(--slate-200);
+	background-color: var(--muted);
+	padding: 0.25rem 0.5rem;
+	border-radius: var(--radius-md);
+	border: 1px solid var(--border);
 }
 
 .fileTreeNodeChildren {
-	margin-top: 0.5rem;
-	padding-left: 1.5rem;
+	margin-top: 0.75rem;
+	padding-left: 1.75rem;
 	display: flex;
 	flex-direction: column;
-	gap: 0.25rem;
+	gap: 0.5rem;
 }
 
 .fileTreeNodeChildrenItem {
 	display: flex;
 	align-items: center;
-	gap: 0.5rem;
-	padding: 0.25rem 0;
+	gap: 0.75rem;
+	padding: 0.375rem 0;
+	transition: all var(--transition-fast);
+
+	&:hover {
+		color: var(--foreground);
+	}
 }
 
 .fileTreeNodeChildrenItemIcon {
-	width: 0.875rem;
-	height: 0.875rem;
+	width: 1rem;
+	height: 1rem;
 
 	&.folder {
-		color: var(--amber-400);
+		color: var(--primary);
 	}
 
 	&.file {
-		color: var(--cyan-400);
+		color: var(--accent);
 	}
 }
 
 .fileTreeNodeChildrenItemName {
-	font-size: 0.75rem;
-	color: var(--slate-600);
+	font-size: 0.875rem;
+	color: var(--muted-foreground);
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
+	transition: color var(--transition-fast);
+
+	.fileTreeNodeChildrenItem:hover & {
+		color: var(--foreground);
+	}
 }
 
 .fileTreeNodeChildrenItemCount {
-	font-size: 0.5625rem;
-	color: var(--slate-400);
+	font-size: 0.625rem;
+	color: var(--muted-foreground);
 	font-family: var(--font-mono);
 }
 
 .fileTreeNodeChildrenMore {
-	font-size: 0.625rem;
-	color: var(--slate-400);
-	padding-left: 1.25rem;
+	font-size: 0.75rem;
+	color: var(--muted-foreground);
+	padding-left: 1.5rem;
+	transition: color var(--transition-fast);
+
+	&:hover {
+		color: var(--primary);
+	}
 }
 
 /* File Tree Item (for renderFileTree) */
@@ -1234,14 +1500,14 @@
 .fileTreeItem {
 	display: flex;
 	align-items: center;
-	gap: 0.625rem;
-	padding: 0.5rem 0.75rem;
-	border-radius: 0.5rem;
+	gap: 0.75rem;
+	padding: 0.75rem 1rem;
+	border-radius: var(--radius-lg);
 	cursor: pointer;
-	transition: all 0.2s ease;
+	transition: all var(--transition-normal);
 
 	&:hover {
-		background-color: var(--slate-100);
+		background-color: rgba(255, 255, 255, 0.08);
 	}
 }
 
@@ -1254,8 +1520,8 @@
 }
 
 .fileTreeToggle {
-	width: 1rem;
-	height: 1rem;
+	width: 1.125rem;
+	height: 1.125rem;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -1263,42 +1529,47 @@
 }
 
 .chevronDown {
-	width: 0.875rem;
-	height: 0.875rem;
-	color: var(--slate-500);
+	width: 1rem;
+	height: 1rem;
+	color: var(--muted-foreground);
+	transition: all var(--transition-normal);
+
+	.fileTreeItem:hover & {
+		color: var(--foreground);
+	}
 }
 
 .chevronRight {
-	width: 0.875rem;
-	height: 0.875rem;
-	color: var(--slate-400);
-	transition: color 0.2s ease;
+	width: 1rem;
+	height: 1rem;
+	color: var(--muted-foreground);
+	transition: all var(--transition-normal);
 
 	.fileTreeItem:hover & {
-		color: var(--slate-500);
+		color: var(--foreground);
 	}
 }
 
 .fileTreeIcon {
 	flex-shrink: 0;
-	transition: color 0.2s ease;
+	transition: color var(--transition-normal);
 }
 
 .folderIcon {
-	color: var(--amber-500);
-	transition: color 0.2s ease;
+	color: var(--primary);
+	transition: color var(--transition-normal);
 
 	.fileTreeItem:hover & {
-		color: var(--amber-600);
+		color: var(--foreground);
 	}
 }
 
 .fileIcon {
-	color: var(--cyan-500);
-	transition: color 0.2s ease;
+	color: var(--accent);
+	transition: color var(--transition-normal);
 
 	.fileTreeItem:hover & {
-		color: var(--cyan-600);
+		color: var(--foreground);
 	}
 }
 
@@ -1308,38 +1579,39 @@
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-	transition: color 0.2s ease;
+	transition: color var(--transition-normal);
 }
 
 .folderName {
 	font-weight: 500;
-	color: var(--slate-700);
-	transition: color 0.2s ease;
+	color: var(--foreground);
+	transition: color var(--transition-normal);
 
 	.fileTreeItem:hover & {
-		color: var(--slate-900);
+		color: var(--primary);
 	}
 }
 
 .fileText {
-	color: var(--slate-600);
-	transition: color 0.2s ease;
+	color: var(--muted-foreground);
+	transition: color var(--transition-normal);
 
 	.fileTreeItem:hover & {
-		color: var(--slate-800);
+		color: var(--foreground);
 	}
 }
 
 .fileCount {
-	font-size: 0.625rem;
-	color: var(--slate-500);
+	font-size: 0.75rem;
+	color: var(--muted-foreground);
 	font-family: var(--font-mono);
-	background-color: var(--slate-100);
-	padding: 0.125rem 0.5rem;
-	border-radius: 0.25rem;
+	background-color: var(--muted);
+	padding: 0.25rem 0.5rem;
+	border-radius: var(--radius-md);
+	border: 1px solid var(--border);
 }
 
 .statusIcon {
-	width: 0.875rem;
-	height: 0.875rem;
+	width: 1rem;
+	height: 1rem;
 }
